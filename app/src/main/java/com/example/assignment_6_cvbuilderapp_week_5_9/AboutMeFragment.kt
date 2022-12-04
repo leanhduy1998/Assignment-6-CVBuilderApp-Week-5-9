@@ -22,7 +22,14 @@ class AboutMeFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val recyclerview = activity?.findViewById<RecyclerView>(R.id.educationRecyclerView)
+        _binding = FragmentAboutmeBinding.inflate(inflater, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val recyclerview = getView()?.findViewById<RecyclerView>(R.id.educationRecyclerView)
 
         recyclerview?.layoutManager = LinearLayoutManager(context)
         val data = ArrayList<ExperienceViewModel>()
@@ -32,14 +39,6 @@ class AboutMeFragment : Fragment() {
 
         val adapter = ExperienceAdapter(data)
         recyclerview?.adapter = adapter
-
-        _binding = FragmentAboutmeBinding.inflate(inflater, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
     }
 
     override fun onDestroyView() {

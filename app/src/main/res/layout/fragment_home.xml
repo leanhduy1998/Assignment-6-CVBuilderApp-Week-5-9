@@ -95,7 +95,8 @@
                     android:id="@+id/textView5"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="iOS Mobile Engineer with a demonstrated base history of working in the computer software industry. A strong business development professional with a Bachelor in Computer Science from Rutgers University-New Brunswick" />
+                    android:text="iOS Mobile Engineer with a demonstrated base history of working in the computer software industry. A strong business development professional with a Bachelor in Computer Science from Rutgers University-New Brunswick"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -115,7 +116,8 @@
                     android:id="@+id/textView7"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Swift, Objective C" />
+                    android:text="Swift, Objective C"
+                    android:textSize="16sp" />
             </LinearLayout>
 
             <LinearLayout
@@ -134,7 +136,8 @@
                     android:id="@+id/textView9"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Realm, Jenkins, AppCenter, Cocoapods, Grand Central Dispatch, Unit Testing" />
+                    android:text="Realm, Jenkins, AppCenter, Cocoapods, Grand Central Dispatch, Unit Testing"
+                    android:textSize="16sp" />
             </LinearLayout>
         </LinearLayout>
 
