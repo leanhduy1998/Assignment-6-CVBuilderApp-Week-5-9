@@ -21,7 +21,7 @@ class TabAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragm
                 return AboutMeFragment()
             }
             2 -> {
-                return HomeFragment()
+                return WorkFragment()
             }
             3 -> HomeFragment()
             else -> return HomeFragment()
