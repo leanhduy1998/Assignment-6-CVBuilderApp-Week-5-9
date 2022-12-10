@@ -36,9 +36,12 @@ class ContactAdapter(private val mList: List<ContactViewModel>) : RecyclerView.A
                 }
                 "Email" -> {
                     val email = Intent(Intent.ACTION_SEND)
-                    email.putExtra(Intent.EXTRA_EMAIL, viewModel.contactInfo)
+                    email.putExtra(Intent.EXTRA_EMAIL, arrayOf(viewModel.contactInfo))
                     email.putExtra(Intent.EXTRA_SUBJECT, "Let's connect!")
                     email.putExtra(Intent.EXTRA_TEXT, "I'm a recruiter and want to connect")
+                    email.data = Uri.parse("mailto:$viewModel.contactInfo")
+                    email.type = "text/plain"
+
                     activity?.startActivity(Intent.createChooser(email, "Send email using"))
                 }
                 else -> {

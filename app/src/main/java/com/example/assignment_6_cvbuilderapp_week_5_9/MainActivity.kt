@@ -1,6 +1,8 @@
 package com.example.assignment_6_cvbuilderapp_week_5_9
 
 import android.content.Context
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.util.AttributeSet
 import com.google.android.material.snackbar.Snackbar
@@ -76,7 +78,21 @@ class MainActivity : AppCompatActivity() {
         // automatically handle clicks on the Home/Up button, so long
         // as you specify a parent activity in AndroidManifest.xml.
         return when (item.itemId) {
-            R.id.action_settings -> true
+            R.id.action_email -> {
+                val email = Intent(Intent.ACTION_SEND)
+                email.putExtra(Intent.EXTRA_EMAIL, arrayOf("andrewledev@gmail.com"))
+                email.putExtra(Intent.EXTRA_SUBJECT, "Let's connect!")
+                email.putExtra(Intent.EXTRA_TEXT, "I'm a recruiter and want to connect")
+                email.data = Uri.parse("mailto:andrewledev@gmail.com")
+                email.type = "text/plain"
+                startActivity(Intent.createChooser(email, "Send email using"))
+                return true
+            }
+            R.id.action_call -> {
+                val intent = Intent(Intent.ACTION_DIAL, Uri.parse("tel:18482528769"))
+                startActivity(intent)
+                return true
+            }
             else -> super.onOptionsItemSelected(item)
         }
     }
