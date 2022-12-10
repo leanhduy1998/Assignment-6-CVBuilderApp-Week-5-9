@@ -23,7 +23,7 @@ class TabAdapter(fragmentActivity: FragmentActivity): FragmentStateAdapter(fragm
             2 -> {
                 return WorkFragment()
             }
-            3 -> HomeFragment()
+            3 -> ContactFragment()
             else -> return HomeFragment()
         }
     }
